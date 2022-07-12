@@ -15,6 +15,9 @@ public class InputManager : MonoBehaviour
     [SerializeField]
     private LevelTransitioner transitioner;
 
+    //Control player state (movement and camera)
+    private bool canMove;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -23,15 +26,18 @@ public class InputManager : MonoBehaviour
         movement = GetComponent<PlayerMovement>();
         _camera = GetComponent<PlayerCamera>();
         _ui = GetComponent<PlayerUI>();
+
+        EnableMovement();
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        movement.Movement(onGroundActions.Movement.ReadValue<Vector2>());
+        if (canMove)
+            movement.Movement(onGroundActions.Movement.ReadValue<Vector2>());
 
         //Do this to ensure that the player finishes all tasks and then transition to next level
-        if(_ui.allTasksComplete())
+        if (_ui.allTasksComplete())
         {
             transitioner.FadeToNextLevel();
         }
@@ -39,10 +45,11 @@ public class InputManager : MonoBehaviour
 
     private void LateUpdate()
     {
-        _camera.CameraLook(onGroundActions.CameraLook.ReadValue<Vector2>());
+        if (canMove)
+            _camera.CameraLook(onGroundActions.CameraLook.ReadValue<Vector2>());
     }
 
-    #region Enable or Disable Movement
+    #region Enable or Disable GroundActions
     private void OnEnable()
     {
         onGroundActions.Enable();
@@ -51,6 +58,18 @@ public class InputManager : MonoBehaviour
     private void OnDisable()
     {
         onGroundActions.Disable();
+    }
+
+    public bool EnableMovement()
+    {
+        canMove = true;
+        return canMove;
+    }
+    
+    public bool DisableMovement()
+    {
+        canMove = false;
+        return canMove;
     }
     #endregion
 }

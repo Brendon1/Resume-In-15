@@ -10,11 +10,7 @@ public class LevelTransitioner : MonoBehaviour
 
     public void FadeToNextLevel()
     {
-        string sceneName = "EmileTestScene";
-        if (SceneExists(sceneName))
-        {
-            FadeToLevel(SceneManager.GetActiveScene().buildIndex + 1);
-        }
+        FadeToLevel(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void FadeToLevel(int levelIndex)
@@ -28,17 +24,17 @@ public class LevelTransitioner : MonoBehaviour
         SceneManager.LoadScene(levelToLoad);
     }
 
-    private bool SceneExists(string name)
-    {
-        List<string> scenesInBuild = new List<string>();
-        for(int i = 1; i < SceneManager.sceneCountInBuildSettings; i++)
-        {
-            string scenePath = SceneUtility.GetScenePathByBuildIndex(i);
-            int lastSlash = scenePath.LastIndexOf("/");
-            scenesInBuild.Add(scenePath.Substring(lastSlash + 1, scenePath.LastIndexOf(".") - lastSlash - 1));
-        }
-        return scenesInBuild.Any(t => t == name);
-    }
+    //private bool SceneExists(string name)
+    //{
+    //    List<string> scenesInBuild = new List<string>();
+    //    for(int i = 1; i < SceneManager.sceneCountInBuildSettings; i++)
+    //    {
+    //        string scenePath = SceneUtility.GetScenePathByBuildIndex(i);
+    //        int lastSlash = scenePath.LastIndexOf("/");
+    //        scenesInBuild.Add(scenePath.Substring(lastSlash + 1, scenePath.LastIndexOf(".") - lastSlash - 1));
+    //    }
+    //    return scenesInBuild.Any(t => t == name);
+    //}
 
     public void QuitApplication()
     {
