@@ -12,8 +12,8 @@ public class PlayerUI : MonoBehaviour
     [SerializeField]
     private RectTransform crosshair;
 
-    private readonly float normalSize = 1f;
-    private readonly float maxSize = 8f;
+    private readonly float normalSize = 5f;
+    private readonly float maxSize = 20f;
     private readonly float speed = 25f;
     private float currentSize;
 
