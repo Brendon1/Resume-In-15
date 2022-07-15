@@ -45,8 +45,7 @@ public class InputManager : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (canMove)
-            _camera.CameraLook(onGroundActions.CameraLook.ReadValue<Vector2>());
+        _camera.CameraLook(onGroundActions.CameraLook.ReadValue<Vector2>());
     }
 
     #region Enable or Disable GroundActions

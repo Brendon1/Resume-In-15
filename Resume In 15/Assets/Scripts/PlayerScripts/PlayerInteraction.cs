@@ -28,7 +28,7 @@ public class PlayerInteraction : MonoBehaviour
     void Update()
     {
         //Ensure it stays empty when not colliding
-        playerUI.UpdateText(string.Empty);
+        playerUI.UpdateTextAndCrosshair(string.Empty);
 
         //Raycast
         CreateRaycast(distance);
@@ -50,10 +50,13 @@ public class PlayerInteraction : MonoBehaviour
                 Interactable interactable = hit.collider.GetComponent<Interactable>();
 
                 //Update the text on screen
-                playerUI.UpdateText(hit.collider.GetComponent<Interactable>().prompt);
-                
-                //check for interact press
-                if(inputManager.onGroundActions.Interact.triggered)
+                playerUI.UpdateTextAndCrosshair(hit.collider.GetComponent<Interactable>().prompt);
+
+                //Give the object an outline shader on hover
+                //GetComponent<Renderer>().material.SetFloat("_Outline", 0.2f);
+
+                //Check for interact press
+                if (inputManager.onGroundActions.Interact.triggered)
                 {
                     interactable.BaseInteract(); //this will run the "Interact" function in the overrwritten interactable object
                     interactable.BaseCompleteTask(); //Complete the task associated with interactable

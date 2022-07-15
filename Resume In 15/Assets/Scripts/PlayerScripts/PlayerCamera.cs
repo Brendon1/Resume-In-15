@@ -25,7 +25,7 @@ public class PlayerCamera : MonoBehaviour
     private Vector3 jointOriginalPos;
     private float timer = 0;
 
-    private void Start()
+    private void Awake()
     {
         //Don't display mouse cursor when testing/playing
         Cursor.lockState = CursorLockMode.Locked;

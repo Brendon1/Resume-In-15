@@ -220,6 +220,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 10810513}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!224 &28104458 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2203943095991434967, guid: 2d14f31171c071d4497765d63668b490, type: 3}
+  m_PrefabInstance: {fileID: 1178684315}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &56856142
 GameObject:
   m_ObjectHideFlags: 0
@@ -1210,6 +1215,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8002362967506773955, guid: c0e9f55e47f6f7a4e9682c3a87b35121, type: 3}
+      propertyPath: fov
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002362967506773955, guid: c0e9f55e47f6f7a4e9682c3a87b35121, type: 3}
       propertyPath: joint
       value: 
       objectReference: {fileID: 101045648}
@@ -1227,11 +1236,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8002362967506773955, guid: c0e9f55e47f6f7a4e9682c3a87b35121, type: 3}
       propertyPath: mouseSensitivity
-      value: 8
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 8002362967506773960, guid: c0e9f55e47f6f7a4e9682c3a87b35121, type: 3}
       propertyPath: distance
-      value: 4
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002362967506773961, guid: c0e9f55e47f6f7a4e9682c3a87b35121, type: 3}
+      propertyPath: size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8002362967506773961, guid: c0e9f55e47f6f7a4e9682c3a87b35121, type: 3}
       propertyPath: task1
@@ -1250,6 +1263,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1375364346}
     - target: {fileID: 8002362967506773961, guid: c0e9f55e47f6f7a4e9682c3a87b35121, type: 3}
+      propertyPath: newSize
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002362967506773961, guid: c0e9f55e47f6f7a4e9682c3a87b35121, type: 3}
+      propertyPath: crosshair
+      value: 
+      objectReference: {fileID: 28104458}
+    - target: {fileID: 8002362967506773961, guid: c0e9f55e47f6f7a4e9682c3a87b35121, type: 3}
+      propertyPath: normalSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002362967506773961, guid: c0e9f55e47f6f7a4e9682c3a87b35121, type: 3}
       propertyPath: promptText
       value: 
       objectReference: {fileID: 754065571}
@@ -1259,7 +1284,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8002362967506773981, guid: c0e9f55e47f6f7a4e9682c3a87b35121, type: 3}
       propertyPath: speed
-      value: 6.5
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 8002362967506773982, guid: c0e9f55e47f6f7a4e9682c3a87b35121, type: 3}
       propertyPath: transitioner
@@ -1750,6 +1775,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: lightbulbDone
       objectReference: {fileID: 0}
+    - target: {fileID: 7330095381222774183, guid: 194ef6c26840fb549b0972dda5f4f879, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6447cc7187c27944e9f5f217db909dab, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 194ef6c26840fb549b0972dda5f4f879, type: 3}
 --- !u!1001 &659709849
@@ -4208,20 +4237,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: -7367559088687387456, guid: 194ef6c26840fb549b0972dda5f4f879, type: 3}
   m_PrefabInstance: {fileID: 608607815}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &1135585907
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1135585903}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -2721331549007201028, guid: 194ef6c26840fb549b0972dda5f4f879, type: 3}
 --- !u!114 &1135585908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4237,6 +4252,19 @@ MonoBehaviour:
   prompt: (Grab Lightbulb)
   task: {fileID: 1832796620}
   bulbContainer: {fileID: 714801085}
+--- !u!65 &1135585912
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135585903}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.008205713, y: 0.018792603, z: 0.008789072}
+  m_Center: {x: 0, y: -0.0001660219, z: -0.0002916692}
 --- !u!1 &1152379041 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -6950719548045329738, guid: de11fd9b20937634da14538e45f7ef19, type: 3}
@@ -4430,6 +4458,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1451876776}
     m_Modifications:
+    - target: {fileID: 2203943095991434967, guid: 2d14f31171c071d4497765d63668b490, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2203943095991434967, guid: 2d14f31171c071d4497765d63668b490, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2203943096108736932, guid: 2d14f31171c071d4497765d63668b490, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 18.3
@@ -6107,8 +6143,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.104429126, y: 0.15646233, z: 0.1408776}
-  m_Center: {x: -0.021182518, y: 0.04496377, z: 0.0058214953}
+  m_Size: {x: 0.104429126, y: 0.1868978, z: 0.24087146}
+  m_Center: {x: -0.021182518, y: 0.060181435, z: 0.005764305}
 --- !u!4 &1465132852 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 555a536ceb99605478ff5bf7b7e8a427, type: 3}
