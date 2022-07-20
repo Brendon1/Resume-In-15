@@ -11,6 +11,8 @@ public class PlayerUI : MonoBehaviour
     private TextMeshProUGUI promptText;
     [SerializeField]
     private RectTransform crosshair;
+    [SerializeField]
+    private Image crosshairImage;
 
     private readonly float normalSize = 5f;
     private readonly float maxSize = 20f;
@@ -41,9 +43,15 @@ public class PlayerUI : MonoBehaviour
 
         //Check if there's currently a prompt on screen
         if (string.IsNullOrEmpty(promptString))
+        {
             currentSize = Mathf.Lerp(currentSize, normalSize, speed * Time.deltaTime);
+            crosshairImage.color = Color.white;
+        }
         else
+        {
             currentSize = Mathf.Lerp(currentSize, maxSize, speed * Time.deltaTime);
+            crosshairImage.color = Color.green;
+        }
 
         crosshair.sizeDelta = new Vector2(currentSize, currentSize);
     }
