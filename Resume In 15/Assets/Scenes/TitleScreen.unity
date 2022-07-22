@@ -202,6 +202,7 @@ GameObject:
   - component: {fileID: 220470453}
   - component: {fileID: 220470452}
   - component: {fileID: 220470451}
+  - component: {fileID: 220470455}
   m_Layer: 5
   m_Name: TitleScreen
   m_TagString: Untagged
@@ -285,14 +286,35 @@ RectTransform:
   - {fileID: 877954138}
   - {fileID: 402910493}
   - {fileID: 1516255906}
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
+  - {fileID: 1450660505}
+  m_Father: {fileID: 802228107}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!95 &220470455
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220470450}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6d3ee76f683c36c4da63bba8f5298e78, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &402910492
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,9 +399,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 658980238}
-        m_TargetAssemblyTypeName: LevelTransitioner, Assembly-CSharp
-        m_MethodName: FadeToNextLevel
+      - m_Target: {fileID: 802228106}
+        m_TargetAssemblyTypeName: TitleScreenTransitioner, Assembly-CSharp
+        m_MethodName: StartTitleAnim
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -438,6 +460,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18c27ac3b5d6b1545b9fbbbc7fd82a4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &802228105
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 802228107}
+  - component: {fileID: 802228106}
+  m_Layer: 0
+  m_Name: TitleScreenAnim
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &802228106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802228105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95f5cf595c78c584b94555b38e8658f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animation: {fileID: 220470455}
+  transitioner: {fileID: 658980238}
+  titleName: {fileID: 877954139}
+--- !u!4 &802228107
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802228105}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 220470454}
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &877954137
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,7 +566,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Resume In 15
+  m_text: '
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 98e140a6d16d7f3408778cbb7c5cdbd5, type: 2}
   m_sharedMaterial: {fileID: -9147102624425740939, guid: 98e140a6d16d7f3408778cbb7c5cdbd5, type: 2}
@@ -5515,13 +5587,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1450660502}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 1218.4, y: 407.3, z: -1165.62}
-  m_LocalScale: {x: 2.5415633, y: 2.5415633, z: 2.5415633}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 258.40002, y: -132.70001, z: -1165.62}
+  m_LocalScale: {x: 2.5415633, y: 2.541563, z: 2.541563}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 220470454}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &1516255905
 GameObject:
@@ -5792,6 +5864,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560483272}
   m_CullTransparentMesh: 1
+--- !u!95 &1619286154 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2139388156343924609, guid: cb2481e2b42c95a408f36c7813cb96cb, type: 3}
+  m_PrefabInstance: {fileID: 2139388155693468172}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1869058654
 GameObject:
   m_ObjectHideFlags: 0
@@ -5947,6 +6024,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2139388156343924610, guid: cb2481e2b42c95a408f36c7813cb96cb, type: 3}
+      propertyPath: transition
+      value: 
+      objectReference: {fileID: 1619286154}
     - target: {fileID: 2139388156343924615, guid: cb2481e2b42c95a408f36c7813cb96cb, type: 3}
       propertyPath: m_Name
       value: LevelTransitioner
