@@ -1,14 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class SpawnAdInWorld : MonoBehaviour
 {
-
     [SerializeField] private GameObject ad;
     [SerializeField] private GameObject houseObject;
-    [SerializeField] private GameObject player;
 
+    [Header("Player Camera")]
+    [SerializeField] private GameObject _camera;
+
+    //The Initialized SpawnedAd 
     private GameObject spawnedAd;
 
     private void OnTriggerEnter(Collider other)
@@ -23,12 +27,14 @@ public class SpawnAdInWorld : MonoBehaviour
         DespawnAd(spawnedAd);
     }
 
-    private void FixedUpdate()
-    {
-        //This is only for getting the ad to face the player in real time when spawned
+    /// <summary>
+    /// This is only for getting the ad to face the player in real time when spawned
+    /// </summary>
+    private void Update()
+    {        //Make sure it faces the camera 
         if (spawnedAd.activeSelf)
         {
-            spawnedAd.transform.LookAt(player.transform.position);
+            spawnedAd.transform.LookAt(_camera.transform);
         }
     }
 
@@ -39,10 +45,9 @@ public class SpawnAdInWorld : MonoBehaviour
     /// <returns></returns>
     private GameObject SpawnAd()
     {
-        List<GameObject> adsSpawned = new List<GameObject>();
-
         Vector3 currentPos = houseObject.transform.position;
-        Vector3 adPos = new Vector3(currentPos.x, currentPos.y + 1, currentPos.z);
+        Vector3 adPos = new Vector3(currentPos.x, currentPos.y + 1f, currentPos.z);
+
         GameObject _ad = Instantiate(ad, adPos, Quaternion.identity);
 
         return _ad;

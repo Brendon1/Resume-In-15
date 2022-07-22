@@ -1228,7 +1228,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8002362967506773955, guid: c0e9f55e47f6f7a4e9682c3a87b35121, type: 3}
       propertyPath: bobAmount.y
-      value: 0.05
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 8002362967506773955, guid: c0e9f55e47f6f7a4e9682c3a87b35121, type: 3}
       propertyPath: enableHeadBob
@@ -1288,7 +1288,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8002362967506773981, guid: c0e9f55e47f6f7a4e9682c3a87b35121, type: 3}
       propertyPath: speed
-      value: 5.5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8002362967506773982, guid: c0e9f55e47f6f7a4e9682c3a87b35121, type: 3}
       propertyPath: transitioner
