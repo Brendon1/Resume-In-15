@@ -50,7 +50,7 @@ public class TitleScreenTransitioner : MonoBehaviour
     private void EndTitleAnim()
     {
         _animation.Play(end, 0, 0.0f);
-        
+
         //Transition During Ending Animation
         transitioner.FadeToNextLevel();
     }
@@ -100,26 +100,5 @@ public class TitleScreenTransitioner : MonoBehaviour
 
         ad.SetActive(true);
     }
-
-    //public void ShowRandomSmallAd()
-    //{
-    //    // Create new render texture
-    //    //var rendTexture = new RenderTexture(Screen.width, Screen.height, 24);
-    //    var rendTexture = new RenderTexture((int)adSize.x, (int)adSize.y, 24);
-
-    //    // Add texture to ad obj raw image
-    //    randomSmallAd.GetComponent<RawImage>().texture = rendTexture;
-
-    //    // Add texture to ad obj video player
-    //    randomSmallAd.GetComponent<VideoPlayer>().targetTexture = rendTexture;
-
-    //    // Select random video from list
-    //    int index = Random.Range(0, adList.Count);
-
-    //    // add video clip to video player
-    //    randomSmallAd.GetComponent<VideoPlayer>().clip = (VideoClip)adList[index];
-
-    //    randomSmallAd.SetActive(true);
-    //}
     #endregion
 }
