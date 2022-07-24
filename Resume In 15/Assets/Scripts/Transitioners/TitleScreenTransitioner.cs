@@ -37,28 +37,35 @@ public class TitleScreenTransitioner : MonoBehaviour
     #region Animation Functions
     public void StartTitleAnim()
     {
+        //Start Animation First
         _animation.Play(start, 0, 0.0f);
-        StartCoroutine(DelayTime(2));
-        ShowRandomAd(randomAd);
+
+        //Then Start Ad
+        StartCoroutine(DelayForAdPopUp(1));
+
+        //Start Title Screen Countdown
         StartCoroutine(Resume_In_15_Timer());
     }
 
     private void EndTitleAnim()
     {
         _animation.Play(end, 0, 0.0f);
+        
+        //Transition During Ending Animation
         transitioner.FadeToNextLevel();
     }
     #endregion
 
     #region Numerators
-    IEnumerator DelayTime(int timer)
+    IEnumerator DelayForAdPopUp(int timer)
     {
         yield return new WaitForSeconds(timer);
+        ShowRandomAd(randomAd);
     }
 
     IEnumerator Resume_In_15_Timer()
     {
-        while (time > 0)
+        while (time >= 0)
         {
             titleName.text = "Resume In " + time;
 
