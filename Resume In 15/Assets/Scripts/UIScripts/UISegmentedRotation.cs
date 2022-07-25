@@ -19,7 +19,7 @@ public class UISegmentedRotation : MonoBehaviour
         UIPositionOffset = new Vector3(0 , 0, distanceFromCamera);
     }
 
-    private void LateUpdate() {
+    private void Update() {
         Vector3 target = Camera.main.transform.position + getQuadrantVector();
         transform.position = Vector3.Slerp(transform.position, target, Time.deltaTime * 2);
         transform.rotation = getNewRotation();
