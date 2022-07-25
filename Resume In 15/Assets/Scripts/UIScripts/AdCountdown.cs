@@ -58,5 +58,6 @@ public class AdCountdown : MonoBehaviour
 
         countdownText.text = "X";
         GetComponent<AdInteraction>().enabled = true;
+        GetComponent<BoxCollider>().enabled = true;
     }
 }
