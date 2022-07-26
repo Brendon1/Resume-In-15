@@ -1288,7 +1288,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8002362967506773981, guid: c0e9f55e47f6f7a4e9682c3a87b35121, type: 3}
       propertyPath: speed
-      value: 4
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 8002362967506773982, guid: c0e9f55e47f6f7a4e9682c3a87b35121, type: 3}
       propertyPath: transitioner
@@ -2881,9 +2881,81 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1985210039}
+    - target: {fileID: 378147212253484602, guid: e84c062f9f0ad68428b16c9616beaa38, type: 3}
+      propertyPath: quadrantSize
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 378147212253484602, guid: e84c062f9f0ad68428b16c9616beaa38, type: 3}
+      propertyPath: distanceFromCamera
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 378147212253484602, guid: e84c062f9f0ad68428b16c9616beaa38, type: 3}
+      propertyPath: MoveCurve.m_Curve.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 378147212253484602, guid: e84c062f9f0ad68428b16c9616beaa38, type: 3}
+      propertyPath: MoveCurve.m_Curve.Array.data[1].time
+      value: 0.3883925
+      objectReference: {fileID: 0}
+    - target: {fileID: 378147212253484602, guid: e84c062f9f0ad68428b16c9616beaa38, type: 3}
+      propertyPath: MoveCurve.m_Curve.Array.data[2].time
+      value: 0.7474579
+      objectReference: {fileID: 0}
+    - target: {fileID: 378147212253484602, guid: e84c062f9f0ad68428b16c9616beaa38, type: 3}
+      propertyPath: MoveCurve.m_Curve.Array.data[3].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 378147212253484602, guid: e84c062f9f0ad68428b16c9616beaa38, type: 3}
+      propertyPath: MoveCurve.m_Curve.Array.data[1].value
+      value: 0.11968432
+      objectReference: {fileID: 0}
+    - target: {fileID: 378147212253484602, guid: e84c062f9f0ad68428b16c9616beaa38, type: 3}
+      propertyPath: MoveCurve.m_Curve.Array.data[2].value
+      value: 0.9851562
+      objectReference: {fileID: 0}
+    - target: {fileID: 378147212253484602, guid: e84c062f9f0ad68428b16c9616beaa38, type: 3}
+      propertyPath: MoveCurve.m_Curve.Array.data[3].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 378147212253484602, guid: e84c062f9f0ad68428b16c9616beaa38, type: 3}
+      propertyPath: MoveCurve.m_Curve.Array.data[1].inSlope
+      value: 0.4775781
+      objectReference: {fileID: 0}
+    - target: {fileID: 378147212253484602, guid: e84c062f9f0ad68428b16c9616beaa38, type: 3}
+      propertyPath: MoveCurve.m_Curve.Array.data[2].inSlope
+      value: 1.671955
+      objectReference: {fileID: 0}
+    - target: {fileID: 378147212253484602, guid: e84c062f9f0ad68428b16c9616beaa38, type: 3}
+      propertyPath: MoveCurve.m_Curve.Array.data[1].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 378147212253484602, guid: e84c062f9f0ad68428b16c9616beaa38, type: 3}
+      propertyPath: MoveCurve.m_Curve.Array.data[1].outSlope
+      value: 0.4775781
+      objectReference: {fileID: 0}
+    - target: {fileID: 378147212253484602, guid: e84c062f9f0ad68428b16c9616beaa38, type: 3}
+      propertyPath: MoveCurve.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 378147212253484602, guid: e84c062f9f0ad68428b16c9616beaa38, type: 3}
+      propertyPath: MoveCurve.m_Curve.Array.data[2].outSlope
+      value: 1.671955
+      objectReference: {fileID: 0}
+    - target: {fileID: 378147212253484602, guid: e84c062f9f0ad68428b16c9616beaa38, type: 3}
+      propertyPath: MoveCurve.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 378147212253484602, guid: e84c062f9f0ad68428b16c9616beaa38, type: 3}
+      propertyPath: MoveCurve.m_Curve.Array.data[2].outWeight
+      value: 0.15154794
+      objectReference: {fileID: 0}
     - target: {fileID: 378147212253484603, guid: e84c062f9f0ad68428b16c9616beaa38, type: 3}
       propertyPath: m_Name
       value: WorldSpaceAdUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 378147212253484604, guid: e84c062f9f0ad68428b16c9616beaa38, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 378147212253484606, guid: e84c062f9f0ad68428b16c9616beaa38, type: 3}
       propertyPath: m_Pivot.x
