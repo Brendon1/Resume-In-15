@@ -29,6 +29,8 @@ public class PlayerUI : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI task4;
 
+    //TODO: ADD MORE TASKS HERE FOR LATER
+
     //Checks for completion status
     private readonly float opacityOfCompletion = 0.2f;
 

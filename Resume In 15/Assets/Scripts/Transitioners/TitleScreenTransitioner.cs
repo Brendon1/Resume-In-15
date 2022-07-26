@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class TitleScreenTransitioner : MonoBehaviour
 {
     //Corresponding animation controllers
+    [Header("Animation Controllers")]
     public Animator _animation;
     public LevelTransitioner transitioner;
 
@@ -15,11 +16,17 @@ public class TitleScreenTransitioner : MonoBehaviour
     private readonly string start = "TitleScreen_Start";
     private readonly string end = "TitleScreen_End";
 
-    //Title "Resume In 15" setters for future countdown
+    //TitleScreen Labels
+    [Header("Titlescreen Labels")]
     [SerializeField] private TextMeshProUGUI titleName;
+    [SerializeField] private Button startButton;
+    [SerializeField] private Button quitButton;
     private float time = 15;
 
+    //Ad to show from list
+    [Header("AD to Show Parameters")]
     [SerializeField] private GameObject randomAd;
+    [SerializeField] private TextMeshProUGUI countdownTimer;
     private Vector2 adSize = new Vector2(1920, 1080);
     private List<Object> optionalList;
     //private List<Object> adList;
@@ -37,8 +44,10 @@ public class TitleScreenTransitioner : MonoBehaviour
     #region Animation Functions
     public void StartTitleAnim()
     {
-        //Start Animation First
+        //Start Animation First and Disable All Buttons
         _animation.Play(start, 0, 0.0f);
+        startButton.enabled = false;
+        quitButton.enabled = false;
 
         //Then Start Ad
         StartCoroutine(DelayForAdPopUp(1));
@@ -82,23 +91,45 @@ public class TitleScreenTransitioner : MonoBehaviour
     #region Spawn Ads
     public void ShowRandomAd(GameObject ad)
     {
-        // Create new render texture
-        //var rendTexture = new RenderTexture(Screen.width, Screen.height, 24);
-        var rendTexture = new RenderTexture((int)adSize.x, (int)adSize.y, 24);
+        if (!ad.activeSelf && ad != null)
+        {
+            //Disable Buttons to prevent player from progression during ad
+            DisableButtons();
 
-        // Add texture to ad obj raw image
-        ad.GetComponent<RawImage>().texture = rendTexture;
+            // Create new render texture
+            var rendTexture = new RenderTexture((int)adSize.x, (int)adSize.y, 24);
 
-        // Add texture to ad obj video player
-        ad.GetComponent<VideoPlayer>().targetTexture = rendTexture;
+            // Add texture to ad obj raw image
+            ad.GetComponent<RawImage>().texture = rendTexture;
 
-        // Select random video from list
-        int index = Random.Range(0, optionalList.Count);
+            // Add texture to ad obj video player
+            ad.GetComponent<VideoPlayer>().targetTexture = rendTexture;
 
-        // add video clip to video player
-        ad.GetComponent<VideoPlayer>().clip = (VideoClip)optionalList[index];
+            // Select random video from list
+            int index = Random.Range(0, optionalList.Count);
 
-        ad.SetActive(true);
+            // add video clip to video player
+            ad.GetComponent<VideoPlayer>().clip = (VideoClip)optionalList[index];
+
+            ad.SetActive(true);
+        }
+    }
+    #endregion
+
+    #region Enable/Disable Buttons
+    public void EnableButtons()
+    {
+        if(countdownTimer.text.Equals("X"))
+        {
+            startButton.enabled = true;
+            quitButton.enabled = true;
+        }
+    }
+    
+    public void DisableButtons()
+    {
+        startButton.enabled = false;
+        quitButton.enabled = false;
     }
     #endregion
 }

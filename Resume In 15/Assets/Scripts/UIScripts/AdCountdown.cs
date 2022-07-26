@@ -60,4 +60,15 @@ public class AdCountdown : MonoBehaviour
         GetComponent<AdInteraction>().enabled = true;
         GetComponent<BoxCollider>().enabled = true;
     }
+
+    /// <summary>
+    /// Added by Emile. I'm making this for Canvas Interactions with the TitleScreen or any future implementations.
+    /// Not recommended to use for anything else.
+    /// </summary>
+    /// <returns></returns>
+    public void DestroyAdOnCountdownEnd()
+    {
+        if (countdownText.text.Equals("X"))
+            Destroy(transform.parent.gameObject); //Destroy the Ad when clicking X button on 2D canvas
+    }
 }
