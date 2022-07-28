@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
+    //Player Camera
     private Camera _camera;
+    //private PlayerCamera playerCamera;
 
     [SerializeField]
     private float distance = 5f; //distance between player and interactable
@@ -20,6 +22,7 @@ public class PlayerInteraction : MonoBehaviour
     void Start()
     {
         _camera = GetComponent<PlayerCamera>()._camera; //grab current camera
+        //playerCamera = GetComponent<PlayerCamera>();
         playerUI = GetComponent<PlayerUI>();
         inputManager = GetComponent<InputManager>();
     }
@@ -32,9 +35,6 @@ public class PlayerInteraction : MonoBehaviour
 
         //Raycast
         CreateRaycast(distance);
-
-        //Interaction
-        //PlayerInteract(hit);
     }
 
     private void CreateRaycast(float length)
@@ -50,10 +50,10 @@ public class PlayerInteraction : MonoBehaviour
                 Interactable interactable = hit.collider.GetComponent<Interactable>();
 
                 //Update the text on screen
-                playerUI.UpdateTextAndCrosshair(hit.collider.GetComponent<Interactable>().prompt);
+                playerUI.UpdateTextAndCrosshair(interactable.prompt);
 
-                //Give the object an outline shader on hover
-                //GetComponent<Renderer>().material.SetFloat("_Outline", 0.2f);
+                //Update mouse sensitivity
+                //playerCamera.UpdateMouseSensitivity(interactable.prompt);
 
                 //Check for interact press
                 if (inputManager.onGroundActions.Interact.triggered)
@@ -63,15 +63,5 @@ public class PlayerInteraction : MonoBehaviour
                 }
             }
         }
-
-        //return hit;
     }
-
-    //private void PlayerInteract(RaycastHit hit)
-    //{
-    //    if (hit.collider.GetComponent<Interactable>() != null)
-    //    {
-    //        Debug.Log(hit.collider.GetComponent<Interactable>().prompt);
-    //    }
-    //}
 }
