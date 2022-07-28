@@ -18,7 +18,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!224 &777144718220355195
 RectTransform:
@@ -131,6 +131,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 777144718220355195}
     m_Modifications:
+    - target: {fileID: 802211286328283908, guid: e0b7fb887a2e09a439faf08e3a50f7e4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 2266998309438801934, guid: e0b7fb887a2e09a439faf08e3a50f7e4, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -222,6 +226,18 @@ PrefabInstance:
     - target: {fileID: 3796509249199887635, guid: e0b7fb887a2e09a439faf08e3a50f7e4, type: 3}
       propertyPath: m_Name
       value: CountdownTimer
+      objectReference: {fileID: 0}
+    - target: {fileID: 3796509249199887635, guid: e0b7fb887a2e09a439faf08e3a50f7e4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493382533807650521, guid: e0b7fb887a2e09a439faf08e3a50f7e4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 7357425666865666703, guid: e0b7fb887a2e09a439faf08e3a50f7e4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0b7fb887a2e09a439faf08e3a50f7e4, type: 3}

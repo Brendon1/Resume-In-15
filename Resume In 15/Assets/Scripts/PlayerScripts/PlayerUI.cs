@@ -14,8 +14,8 @@ public class PlayerUI : MonoBehaviour
     [SerializeField]
     private Image crosshairImage;
 
-    private readonly float normalSize = 3f;
-    private readonly float maxSize = 35f;
+    private readonly float normalSize = 10f;
+    private readonly float maxSize = 40;
     private readonly float speed = 25f;
     private float currentSize;
 
