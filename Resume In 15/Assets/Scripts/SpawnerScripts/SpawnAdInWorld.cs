@@ -14,16 +14,24 @@ public class SpawnAdInWorld : MonoBehaviour
 
     //The Initialized SpawnedAd 
     private GameObject spawnedAd;
+    private AudioSource _audio;
+
+    private void Awake()
+    {
+        _audio = GetComponent<AudioSource>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Triggered!");
+        _audio.Play();
         spawnedAd = SpawnAd();
     }
 
     private void OnTriggerExit(Collider other)
     {
         Debug.Log("Not Triggered");
+        _audio.Stop();
         DespawnAd(spawnedAd);
     }
 
