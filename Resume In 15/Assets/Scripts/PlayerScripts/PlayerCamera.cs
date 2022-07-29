@@ -9,13 +9,13 @@ public class PlayerCamera : MonoBehaviour
     private float x_Rotation = 0f;
 
     //Controls how fast camera will move per frame
-    public float mouseSensitivity = 55;
+    public float mouseSensitivity = 55f;
 
     //Extra Camera Properties
+    public float fov = 60f;
     public bool cameraCanMove = true; //for later?
     public float maxLookAngle = 80f;
 
-    //Player Movement to affect camera
     private PlayerMovement playerMovement;
     public bool enableHeadBob = true;
     public Transform joint;
@@ -34,6 +34,7 @@ public class PlayerCamera : MonoBehaviour
 
     public void CameraLook(Vector2 input)
     {
+        _camera.fieldOfView = fov;
         float mouse_x = input.x * Time.deltaTime;
         float mouse_y = input.y * Time.deltaTime;
 
@@ -52,25 +53,6 @@ public class PlayerCamera : MonoBehaviour
             HeadBob();
         }
     }
-
-    //private readonly float normalSensitivity = 80f;
-    //private readonly float minSensitivity = 40;
-    //private readonly float speed = 25f;
-    //private float currentSensitivity;
-
-    //public void UpdateMouseSensitivity(string promptString)
-    //{
-    //    if(string.IsNullOrEmpty(promptString))
-    //    {
-    //        currentSensitivity = Mathf.Lerp(currentSensitivity, normalSensitivity, speed * Time.deltaTime);
-    //    }
-    //    else
-    //    {
-    //        currentSensitivity = Mathf.Lerp(currentSensitivity, minSensitivity, speed * Time.deltaTime);
-    //    }
-
-    //    mouseSensitivity = currentSensitivity;
-    //}
 
     private void HeadBob()
     {
