@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class ToothbrushInteraction : Interactable
 {
+    [SerializeField]
     private AudioSource _audio;
-
     [SerializeField]
     private InputManager _input;
-
-    private void Awake()
-    {
-        _audio = GetComponent<AudioSource>();
-    }
 
     //LateUpdate happens during Interaction
     private void LateUpdate()

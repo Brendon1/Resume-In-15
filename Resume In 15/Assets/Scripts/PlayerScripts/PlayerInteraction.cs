@@ -32,6 +32,9 @@ public class PlayerInteraction : MonoBehaviour
 
         //Raycast
         CreateRaycast(distance);
+
+        //Interaction
+        //PlayerInteract(hit);
     }
 
     private void CreateRaycast(float length)
@@ -47,7 +50,10 @@ public class PlayerInteraction : MonoBehaviour
                 Interactable interactable = hit.collider.GetComponent<Interactable>();
 
                 //Update the text on screen
-                playerUI.UpdateTextAndCrosshair(interactable.prompt);
+                playerUI.UpdateTextAndCrosshair(hit.collider.GetComponent<Interactable>().prompt);
+
+                //Give the object an outline shader on hover
+                //GetComponent<Renderer>().material.SetFloat("_Outline", 0.2f);
 
                 //Check for interact press
                 if (inputManager.onGroundActions.Interact.triggered)
@@ -57,5 +63,15 @@ public class PlayerInteraction : MonoBehaviour
                 }
             }
         }
+
+        //return hit;
     }
+
+    //private void PlayerInteract(RaycastHit hit)
+    //{
+    //    if (hit.collider.GetComponent<Interactable>() != null)
+    //    {
+    //        Debug.Log(hit.collider.GetComponent<Interactable>().prompt);
+    //    }
+    //}
 }
