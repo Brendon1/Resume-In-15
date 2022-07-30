@@ -9,7 +9,7 @@ public class PlayerCamera : MonoBehaviour
     private float x_Rotation = 0f;
 
     //Controls how fast camera will move per frame
-    public float mouseSensitivity = 100f;
+    public float mouseSensitivity = 55f;
 
     //Extra Camera Properties
     public float fov = 60f;
