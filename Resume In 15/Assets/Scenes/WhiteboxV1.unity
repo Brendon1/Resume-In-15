@@ -3634,8 +3634,20 @@ PrefabInstance:
       value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 378147212189843863, guid: e84c062f9f0ad68428b16c9616beaa38, type: 3}
+      propertyPath: maxNumAds
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 378147212189843863, guid: e84c062f9f0ad68428b16c9616beaa38, type: 3}
       propertyPath: spawnTime
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 378147212189843863, guid: e84c062f9f0ad68428b16c9616beaa38, type: 3}
+      propertyPath: minSpawnRate
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 378147212189843863, guid: e84c062f9f0ad68428b16c9616beaa38, type: 3}
+      propertyPath: startingSpawnRate
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 378147212253484602, guid: e84c062f9f0ad68428b16c9616beaa38, type: 3}
       propertyPath: player
@@ -3644,6 +3656,10 @@ PrefabInstance:
     - target: {fileID: 378147212253484602, guid: e84c062f9f0ad68428b16c9616beaa38, type: 3}
       propertyPath: quadrantSize
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 378147212253484602, guid: e84c062f9f0ad68428b16c9616beaa38, type: 3}
+      propertyPath: XQuadrantSize
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 378147212253484602, guid: e84c062f9f0ad68428b16c9616beaa38, type: 3}
       propertyPath: distanceFromCamera
