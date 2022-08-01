@@ -5,12 +5,15 @@ using UnityEngine;
 public class OpenDoor : Interactable
 {
 
+    private AudioSource _audio;
+
     private Animator _animation;
     private readonly string openDoor = "OpenDoor";
     
     void Awake()
     {
         _animation = GetComponentInParent<Animator>();
+        _audio = GetComponent<AudioSource>();
     }
 
     /// <summary>
@@ -19,6 +22,7 @@ public class OpenDoor : Interactable
     protected override void Interact()
     {
         _animation.Play(openDoor);
+        _audio.Play();
         gameObject.layer = 0;
     }
 }
