@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/WhiteboxV1.unity
     guid: ec8b8be9afe502849867519dc2c04f17
   - enabled: 1
-    path: Assets/Scenes/De end..unity
+    path: Assets/Scenes/CreditsScreen.unity
     guid: 68f1257a22f8d154b9cb00debbaef5b4
   m_configObjects: {}

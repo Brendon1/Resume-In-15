@@ -7,33 +7,19 @@ public class UISegmentedRotation : MonoBehaviour
 {
     public GameObject player;
     public float distanceFromCamera = 1.0f;
-    public float quadrantSize = 90f; // How many degrees in each UI quadrant
-    public AnimationCurve MoveCurve;
-    private Vector3 UIPositionOffset;
-    private float animationCurveTime;
+    public float XQuadrantSize = 45f; // How many degrees in each vertical UI quadrant
+    public float YQuadrantSize = 90f; // How many degrees in each horizontal UI quadrant
 
     // Start is called before the first frame update
     void Start()
     {
         ScaleCanvas();
-        UIPositionOffset = new Vector3(0 , 0, distanceFromCamera);
     }
 
     private void Update() {
         Vector3 target = Camera.main.transform.position + getQuadrantVector();
-        transform.position = Vector3.Slerp(transform.position, target, Time.deltaTime * 2);
+        transform.position = Vector3.Lerp(transform.position, target, Time.deltaTime * 15);
         transform.rotation = getNewRotation();
-
-        // TODO: fix animation curve for position slerp
-        /*
-        if(target != transform.position){
-            animationCurveTime += Time.deltaTime;
-            transform.position = Vector3.Slerp(transform.position, target, animationCurveTime);
-            transform.LookAt(Camera.main.transform);
-        }
-        else{
-            animationCurveTime = 0;
-        }*/
     }
 
     private Quaternion getNewRotation(){
@@ -50,9 +36,14 @@ public class UISegmentedRotation : MonoBehaviour
     }
 
     private Vector3 getQuadrantVector(){
-        int quadrant = (int) ((player.transform.rotation.eulerAngles.y + 0.5 * quadrantSize) % 360f / quadrantSize);
-        float angle = quadrant * quadrantSize;
+        int XAxisQuadrant = (int) ((Camera.main.transform.rotation.eulerAngles.x + 0.5 * XQuadrantSize) % 360f / XQuadrantSize);
+        float angleX = XAxisQuadrant * XQuadrantSize;
 
-        return Quaternion.AngleAxis(angle, Vector3.up) * UIPositionOffset;
+        int YAxisQuadrant = (int) ((player.transform.rotation.eulerAngles.y + 0.5 * YQuadrantSize) % 360f / YQuadrantSize);
+        float angleY = YAxisQuadrant * YQuadrantSize;
+
+        var rotation = Quaternion.Euler(angleX, angleY, 0);
+
+        return rotation * Vector3.forward * distanceFromCamera;
     }
 }

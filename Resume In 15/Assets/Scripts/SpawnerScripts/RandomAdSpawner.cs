@@ -9,8 +9,12 @@ public class RandomAdSpawner : MonoBehaviour
     public GameObject objectToSpawn;
     public GameObject parent;
     public Vector2 adSize = new Vector2(300, 300);
-    public float spawnTime = 3.0f;
+    public int maxNumAds = 20;
+    public float startingSpawnRate = 8.0f;
+    public float minSpawnRate = 2.0f;
     private float timeUntilSpawn;
+    private float changeSpawnTimer = 8.0f;
+    private float timeUntilChangeSpawn;
     private List<Object> adsList;
 
     // Start is called before the first frame update
@@ -18,24 +22,37 @@ public class RandomAdSpawner : MonoBehaviour
     {
         // Read in all ad videos
         adsList = new List<Object>(Resources.LoadAll("AdVideos"));
+        timeUntilSpawn = startingSpawnRate;
+        timeUntilChangeSpawn = changeSpawnTimer;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // TODO: add an animation curve to adjust rates over time
-        // call spawner every X interval of time
-        if(timeUntilSpawn > 0){
-            timeUntilSpawn -= Time.deltaTime;
-        }
-        else{
+        timeUntilSpawn -= Time.deltaTime;
+
+        if(timeUntilSpawn <= 0){
             SpawnObject();
-            timeUntilSpawn = spawnTime;
+            timeUntilSpawn = startingSpawnRate;
+            Debug.Log("spawn rate is: " + startingSpawnRate);
+        }
+
+        if(startingSpawnRate > minSpawnRate){
+            timeUntilChangeSpawn -= Time.deltaTime;
+
+            if(timeUntilChangeSpawn <= 0){
+                timeUntilChangeSpawn = changeSpawnTimer;
+                startingSpawnRate = startingSpawnRate * 0.8f;
+            }
         }
     }
 
     // Instantiate an advertisement in the UI canvas
     void SpawnObject(){
+        if(parent.transform.childCount >= maxNumAds){
+            return;
+        }
+
         // Instantiate new advertisement object
         GameObject adObj = (GameObject)Instantiate(objectToSpawn, Vector3.zero, Quaternion.identity);
         adObj.transform.SetParent(parent.transform, false);
@@ -49,21 +66,34 @@ public class RandomAdSpawner : MonoBehaviour
         // Adjust size of ad obj
         adObj.GetComponent<RectTransform>().sizeDelta = adSize;
 
+        /* TODO: delete this chunk after sufficient testing of new code
         // Create new render texture
         //var rendTexture = new RenderTexture(Screen.width, Screen.height, 24);
-        var rendTexture = new RenderTexture((int)adSize.x, (int)adSize.y, 24);
+        //var rendTexture = new RenderTexture((int)adSize.x, (int)adSize.y, 24);
 
         // Add texture to ad obj raw image
-        adObj.GetComponent<RawImage>().texture = rendTexture;
+        //adObj.GetComponent<RawImage>().texture = rendTexture;
 
         // Add texture to ad obj video player
-        adObj.GetComponent<VideoPlayer>().targetTexture = rendTexture;
+        //adObj.GetComponent<VideoPlayer>().targetTexture = rendTexture;
+        */
 
         // Select random video from list
         int index = Random.Range(0, adsList.Count);
 
         // add video clip to video player
         adObj.GetComponent<VideoPlayer>().clip = (VideoClip)adsList[index];
+        float videoWidth = adObj.GetComponent<VideoPlayer>().clip.width;
+        float videoHeight = adObj.GetComponent<VideoPlayer>().clip.height;
+
+        // Create new render texture
+        var rendTexture = new RenderTexture((int)videoWidth, (int)videoHeight, 24);
+
+        // Add texture to ad obj raw image
+        adObj.GetComponent<RawImage>().texture = rendTexture;
+
+        // Add texture to ad obj video player
+        adObj.GetComponent<VideoPlayer>().targetTexture = rendTexture;
     }
 
     // Generate a random spawn location within the UI

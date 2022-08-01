@@ -200,7 +200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radialCountdown: {fileID: 5140783302528031869}
   countdownText: {fileID: 6955070647979819212}
-  startTime: 15
+  startTime: 5
 --- !u!65 &2266998309438801934
 BoxCollider:
   m_ObjectHideFlags: 0
