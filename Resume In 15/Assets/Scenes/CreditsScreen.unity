@@ -1199,7 +1199,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 281105355}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2131671574}
+        m_TargetAssemblyTypeName: CreditScreenTransitioner, Assembly-CSharp
+        m_MethodName: SkipCredits
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &293267826
 GameObject:
   m_ObjectHideFlags: 0
@@ -4303,7 +4315,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2139388156343924615, guid: cb2481e2b42c95a408f36c7813cb96cb, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb2481e2b42c95a408f36c7813cb96cb, type: 3}
@@ -5210,3 +5222,4 @@ MonoBehaviour:
   _animation: {fileID: 2131671573}
   transitioner: {fileID: 1670352940}
   titleName: {fileID: 281105355}
+  titleButton: {fileID: 281105357}

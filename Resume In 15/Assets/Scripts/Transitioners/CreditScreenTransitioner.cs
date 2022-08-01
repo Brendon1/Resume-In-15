@@ -75,6 +75,9 @@ public class CreditScreenTransitioner : MonoBehaviour
     #endregion
 
     #region Skip Credits
-
+    public void SkipCredits()
+    {
+        transitioner.FadeToLevel(0); //go back to titlescreen
+    }
     #endregion
 }
