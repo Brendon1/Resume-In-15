@@ -8,6 +8,9 @@ public class MakeToastInteractable : Interactable
     [SerializeField]
     private GameObject toast;
 
+    [SerializeField]
+    private InputManager _input;
+
     private AudioSource _audio;
 
     private void Awake()
@@ -20,9 +23,17 @@ public class MakeToastInteractable : Interactable
     /// </summary>
     protected override void Interact()
     {
-        toast.SetActive(true);
-        toast.layer = 6;
         _audio.Play();
         gameObject.layer = 0;
+        StartCoroutine(WaitForAudio());
+    }
+
+    IEnumerator WaitForAudio()
+    {
+        _input.DisableMovement();
+        yield return new WaitForSeconds(_audio.clip.length - 2); //toast come out at "ding" sound :)))
+        toast.SetActive(true);
+        toast.layer = 6;
+        _input.EnableMovement();
     }
 }
