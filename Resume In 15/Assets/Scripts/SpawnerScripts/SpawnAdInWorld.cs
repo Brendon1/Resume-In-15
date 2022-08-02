@@ -39,8 +39,9 @@ public class SpawnAdInWorld : MonoBehaviour
     /// This is only for getting the ad to face the player in real time when spawned
     /// </summary>
     private void Update()
-    {        //Make sure it faces the camera 
-        if (spawnedAd.activeSelf)
+    {   
+        //Make sure it faces the camera 
+        if (spawnedAd != null)
         {
             spawnedAd.transform.LookAt(_camera.transform);
         }

@@ -40,6 +40,7 @@ public class InputManager : MonoBehaviour
         if (_ui.allTasksComplete())
         {
             transitioner.FadeToNextLevel();
+            DisableMovement();
         }
     }
 
