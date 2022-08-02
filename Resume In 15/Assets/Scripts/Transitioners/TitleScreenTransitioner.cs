@@ -39,6 +39,8 @@ public class TitleScreenTransitioner : MonoBehaviour
         // Read in all ad videos
         optionalList = new List<Object>(Resources.LoadAll("OptionalVideos"));
         //adList = new List<Object>(Resources.LoadAll("AdVideos"));
+
+        //Screen.SetResolution(1920, 1080, true);
     }
 
     #region Animation Functions
