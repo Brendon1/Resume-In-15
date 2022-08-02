@@ -28,6 +28,8 @@ public class PlayerUI : MonoBehaviour
     private TextMeshProUGUI task3;
     [SerializeField]
     private TextMeshProUGUI task4;
+    [SerializeField]
+    private TextMeshProUGUI task5;
 
     //TODO: ADD MORE TASKS HERE FOR LATER
 
@@ -52,7 +54,7 @@ public class PlayerUI : MonoBehaviour
         else
         {
             currentSize = Mathf.Lerp(currentSize, maxSize, speed * Time.deltaTime);
-            crosshairImage.color = Color.green;
+            crosshairImage.color = Color.cyan;
         }
 
         crosshair.sizeDelta = new Vector2(currentSize, currentSize);
@@ -60,7 +62,7 @@ public class PlayerUI : MonoBehaviour
 
     public bool allTasksComplete()
     {
-        if (task1.color.a == opacityOfCompletion && task2.color.a == opacityOfCompletion && task3.color.a == opacityOfCompletion && task4.color.a == opacityOfCompletion)
+        if (task1.color.a == opacityOfCompletion && task2.color.a == opacityOfCompletion && task3.color.a == opacityOfCompletion && task4.color.a == opacityOfCompletion && task5.color.a == opacityOfCompletion)
         {
             return true;
         }

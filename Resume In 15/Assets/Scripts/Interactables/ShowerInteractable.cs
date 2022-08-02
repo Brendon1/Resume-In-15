@@ -10,22 +10,20 @@ public class ShowerInteractable : Interactable
     [SerializeField]
     private InputManager _input;
 
-    //LateUpdate happens during Interaction
-    private void LateUpdate()
-    {
-        if (!_audio.isPlaying)
-        {
-            _input.EnableMovement();
-        }
-    }
-
     /// <summary>
     /// Use this function to make any type of interaction
     /// </summary>
     protected override void Interact()
     {
         _audio.Play();
-        _input.DisableMovement();
+        StartCoroutine(WaitForAudio());
         gameObject.layer = 0;
+    }
+
+    IEnumerator WaitForAudio()
+    {
+        _input.DisableMovement();
+        yield return new WaitForSeconds(_audio.clip.length);
+        _input.EnableMovement();
     }
 }
