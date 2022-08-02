@@ -3,7 +3,22 @@ guid: a45bc873c996b3d4a91bc0fcad867aad
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Knob1
+    second: {fileID: 2100000, guid: 0c8ee4db31e46ca4eb759070844b9a8f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WoodDoor
+    second: {fileID: 2100000, guid: 5d5d64d990630ab4f8bc5f4ea82f37d2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 5d5d64d990630ab4f8bc5f4ea82f37d2, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
