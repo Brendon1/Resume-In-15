@@ -52,4 +52,7 @@ MonoBehaviour:
   objectToSpawn: {fileID: 492125938901685997, guid: fe15755d3ea5dfb4c9b6d3495403d542, type: 3}
   parent: {fileID: 0}
   adSize: {x: 400, y: 225}
-  spawnTime: 3
+  maxNumAds: 20
+  startingSpawnRate: 20
+  minSpawnRate: 2
+  changeSpawnTimer: 4

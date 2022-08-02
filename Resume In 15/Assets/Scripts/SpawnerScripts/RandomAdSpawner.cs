@@ -10,10 +10,11 @@ public class RandomAdSpawner : MonoBehaviour
     public GameObject parent;
     public Vector2 adSize = new Vector2(300, 300);
     public int maxNumAds = 20;
+    public float onLaunchSpawnRate = 4.0f;
     public float startingSpawnRate = 8.0f;
     public float minSpawnRate = 2.0f;
     private float timeUntilSpawn;
-    private float changeSpawnTimer = 8.0f;
+    public float changeSpawnTimer = 8.0f;
     private float timeUntilChangeSpawn;
     private List<Object> adsList;
 
@@ -22,7 +23,7 @@ public class RandomAdSpawner : MonoBehaviour
     {
         // Read in all ad videos
         adsList = new List<Object>(Resources.LoadAll("AdVideos"));
-        timeUntilSpawn = startingSpawnRate;
+        timeUntilSpawn = onLaunchSpawnRate;
         timeUntilChangeSpawn = changeSpawnTimer;
     }
 
@@ -42,7 +43,7 @@ public class RandomAdSpawner : MonoBehaviour
 
             if(timeUntilChangeSpawn <= 0){
                 timeUntilChangeSpawn = changeSpawnTimer;
-                startingSpawnRate = startingSpawnRate * 0.8f;
+                startingSpawnRate = startingSpawnRate * 0.85f;
             }
         }
     }
