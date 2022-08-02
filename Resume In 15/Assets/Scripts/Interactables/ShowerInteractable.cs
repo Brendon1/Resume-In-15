@@ -10,12 +10,17 @@ public class ShowerInteractable : Interactable
     [SerializeField]
     private InputManager _input;
 
+    [Header("Effects")]
+    [SerializeField] private GameObject water;
+    [SerializeField] private GameObject steam;
+
     /// <summary>
     /// Use this function to make any type of interaction
     /// </summary>
     protected override void Interact()
     {
         _audio.Play();
+        StartEffects(true);
         StartCoroutine(WaitForAudio());
         gameObject.layer = 0;
     }
@@ -24,6 +29,15 @@ public class ShowerInteractable : Interactable
     {
         _input.DisableMovement();
         yield return new WaitForSeconds(_audio.clip.length);
+        StartEffects(false);
         _input.EnableMovement();
     }
+
+    #region Effects Trigger
+    private void StartEffects(bool flag)
+    {
+        water.SetActive(flag);
+        steam.SetActive(flag);
+    }
+    #endregion
 }

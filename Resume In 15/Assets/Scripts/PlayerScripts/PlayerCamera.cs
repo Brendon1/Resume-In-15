@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerCamera : MonoBehaviour
 {
+
+    private static PlayerCamera instance;
+
     public Camera _camera;
 
     private float x_Rotation = 0f;
@@ -27,8 +30,6 @@ public class PlayerCamera : MonoBehaviour
 
     private void Awake()
     {
-        //Don't display mouse cursor when testing/playing
-        Cursor.lockState = CursorLockMode.Locked;
         playerMovement = GetComponent<PlayerMovement>();
     }
 
@@ -69,5 +70,17 @@ public class PlayerCamera : MonoBehaviour
             timer = 0;
             joint.localPosition = new Vector3(Mathf.Lerp(joint.localPosition.x, jointOriginalPos.x, Time.deltaTime * bobSpeed), Mathf.Lerp(joint.localPosition.y, jointOriginalPos.y, Time.deltaTime * bobSpeed), Mathf.Lerp(joint.localPosition.z, jointOriginalPos.z, Time.deltaTime * bobSpeed));
         }
+    }
+
+    /// <summary>
+    /// Control when the cursor is on screen (controlled in InputManager class)
+    /// </summary>
+    /// <param name="locked"></param>
+    public void CursorLockState(bool locked)
+    {
+        if(locked)
+            Cursor.lockState = CursorLockMode.Locked;
+        else
+            Cursor.lockState = CursorLockMode.None;
     }
 }

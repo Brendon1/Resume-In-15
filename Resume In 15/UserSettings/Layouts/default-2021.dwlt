@@ -14,12 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
+<<<<<<< HEAD
     x: -5
     y: 51
     width: 1920
     height: 997
+=======
+    x: 0
+    y: 42.666668
+    width: 1706.6667
+    height: 976
+>>>>>>> Emile-Branch
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Scene
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 350}
   m_MaxSize: {x: 10000, y: 10000}
@@ -44,8 +51,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1920
-    height: 997
+    width: 1706.6666
+    height: 976
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
@@ -69,7 +76,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1920
+    width: 1706.6666
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -90,8 +97,8 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 977
-    width: 1920
+    y: 956
+    width: 1706.6666
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -113,12 +120,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 30
-    width: 1920
-    height: 947
+    width: 1706.6666
+    height: 926
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 18
+  controlID: 95
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -138,12 +145,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1920
-    height: 947
+    width: 1706.6666
+    height: 926
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 19
+  controlID: 96
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -163,12 +170,21 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1543
     height: 947
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
   controlID: 107
+=======
+    width: 1372.6666
+    height: 926
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 16192, y: 16192}
+  vertical: 1
+  controlID: 97
+>>>>>>> Emile-Branch
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -188,12 +204,21 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1543
     height: 681
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
   controlID: 108
+=======
+    width: 1372.6666
+    height: 667.3333
+  m_MinSize: {x: 200, y: 100}
+  m_MaxSize: {x: 16192, y: 8096}
+  vertical: 0
+  controlID: 98
+>>>>>>> Emile-Branch
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -211,10 +236,17 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 385
     height: 681
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
+=======
+    width: 343.33334
+    height: 667.3333
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+>>>>>>> Emile-Branch
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -235,10 +267,17 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 385
     y: 0
     width: 1158
     height: 681
+=======
+    x: 343.33334
+    y: 0
+    width: 1029.3333
+    height: 667.3333
+>>>>>>> Emile-Branch
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 14}
@@ -264,9 +303,15 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 681
     width: 1543
     height: 266
+=======
+    y: 667.3333
+    width: 1372.6666
+    height: 258.6667
+>>>>>>> Emile-Branch
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
   m_ActualView: {fileID: 16}
@@ -291,12 +336,21 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1543
     y: 0
     width: 377
     height: 947
   m_MinSize: {x: 276, y: 71}
   m_MaxSize: {x: 4001, y: 4021}
+=======
+    x: 1372.6666
+    y: 0
+    width: 334
+    height: 926
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
+>>>>>>> Emile-Branch
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -319,24 +373,38 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Hierarchy
-    m_Image: {fileID: 7966133145522015247, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: -3734745235275155857, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: -5
     y: 81
     width: 384
     height: 660
+=======
+    x: 0
+    y: 72.66667
+    width: 342.33334
+    height: 646.3333
+>>>>>>> Emile-Branch
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
+<<<<<<< HEAD
       scrollPos: {x: 0, y: 112}
       m_SelectedIDs: 24610000
       m_LastClickedID: 24868
       m_ExpandedIDs: ea97fefffaeaffff0cebffff0afbffff5a600000ba600000a0610000
+=======
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 184e0200
+      m_LastClickedID: 0
+      m_ExpandedIDs: 0a26feffa8edffff62f2ffff08f6ffff08fbffff485e0000805e00009a5e0000c05e0000da5e0000085f00005e5f0000ce5f0000f05f00005860000062600000da6000005a61000094610000ce610000
+>>>>>>> Emile-Branch
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: Joint
@@ -352,7 +420,7 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 0
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 9}
+        m_ClientGUIView: {fileID: 11}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -376,14 +444,21 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Scene
-    m_Image: {fileID: 2593428753322112591, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: 8634526014445323508, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 380
     y: 81
     width: 1156
     height: 660
+=======
+    x: 343.33334
+    y: 72.66667
+    width: 1027.3333
+    height: 646.3333
+>>>>>>> Emile-Branch
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -394,7 +469,7 @@ MonoBehaviour:
       collapsed: 0
       displayed: 1
       snapOffset: {x: 0, y: 0}
-      snapOffsetDelta: {x: -101, y: -26}
+      snapOffsetDelta: {x: -98.66669, y: -26}
       snapCorner: 3
       id: Tool Settings
       index: 0
@@ -576,7 +651,7 @@ MonoBehaviour:
       index: 10
       layout: 4
   m_WindowGUID: cc27987af1a868c49b0894db9c0f5429
-  m_Gizmos: 0
+  m_Gizmos: 1
   m_OverrideSceneCullingMask: 6917529027641081856
   m_SceneIsLit: 1
   m_SceneLighting: 1
@@ -585,9 +660,15 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
     m_Target: {x: 13.799395, y: 1.6593525, z: 9.431164}
     speed: 2
     m_Value: {x: 13.799395, y: 1.6593525, z: 9.431164}
+=======
+    m_Target: {x: 37.426086, y: -6.704845, z: -16.648252}
+    speed: 2
+    m_Value: {x: 37.426086, y: -6.704845, z: -16.648252}
+>>>>>>> Emile-Branch
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -604,7 +685,7 @@ MonoBehaviour:
     showImageEffects: 1
     showParticleSystems: 1
     showVisualEffectGraphs: 1
-    m_FxEnabled: 1
+    m_FxEnabled: 0
   m_Grid:
     xGrid:
       m_Fade:
@@ -634,6 +715,7 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
+<<<<<<< HEAD
     m_Target: {x: -0.17735672, y: -0.44773045, z: 0.09388459, w: -0.8720821}
     speed: 2
     m_Value: {x: -0.17724514, y: -0.44744876, z: 0.09382552, w: -0.87153345}
@@ -641,6 +723,15 @@ MonoBehaviour:
     m_Target: 2.858394
     speed: 2
     m_Value: 2.858394
+=======
+    m_Target: {x: 0.028653126, y: 0.96587044, z: -0.11612857, w: 0.22987913}
+    speed: 2
+    m_Value: {x: 0.026238857, y: 0.9699978, z: -0.1151673, w: 0.21249071}
+  m_Size:
+    m_Target: 20.619669
+    speed: 2
+    m_Value: 20.619669
+>>>>>>> Emile-Branch
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -658,7 +749,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: 0.04145616, y: -0.9320691, z: 0.11334748, w: 0.34366152}
+  m_LastSceneViewRotation: {x: 0.10181455, y: 0.04475818, z: -0.003608892, w: 0.9944161}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -681,7 +772,7 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Animator
-    m_Image: {fileID: -1673928668082335149, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: 1711060831702674872, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
@@ -697,7 +788,11 @@ MonoBehaviour:
     m_KeySerializationHelper:
     - {fileID: -5855516331685436225, guid: f0c511fd62a129f4bbc34ed1777c8974, type: 2}
     - {fileID: 2096365808856157966, guid: 41f564adb4454ce46b6aa877ce10a6a7, type: 2}
+<<<<<<< HEAD
     - {fileID: -4134036646464006227, guid: 0a89d904f1ce37241b35e16f5d612b4c, type: 2}
+=======
+    - {fileID: -6083715992810834727, guid: 3917da77044669b408f641309d20f98a, type: 2}
+>>>>>>> Emile-Branch
     m_ValueSerializationHelper:
     - e00: 1
       e01: 0
@@ -734,11 +829,19 @@ MonoBehaviour:
     - e00: 1
       e01: 0
       e02: 0
+<<<<<<< HEAD
       e03: 180
       e10: 0
       e11: 1
       e12: 0
       e13: 300
+=======
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+>>>>>>> Emile-Branch
       e20: 0
       e21: 0
       e22: 1
@@ -748,9 +851,15 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
+<<<<<<< HEAD
   m_AnimatorController: {fileID: 9100000, guid: 0a89d904f1ce37241b35e16f5d612b4c, type: 2}
   m_BreadCrumbs:
   - m_Target: {fileID: -4134036646464006227, guid: 0a89d904f1ce37241b35e16f5d612b4c, type: 2}
+=======
+  m_AnimatorController: {fileID: 9100000, guid: 3917da77044669b408f641309d20f98a, type: 2}
+  m_BreadCrumbs:
+  - m_Target: {fileID: -6083715992810834727, guid: 3917da77044669b408f641309d20f98a, type: 2}
+>>>>>>> Emile-Branch
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -779,14 +888,21 @@ MonoBehaviour:
   m_MaxSize: {x: 10000, y: 10000}
   m_TitleContent:
     m_Text: Project
-    m_Image: {fileID: -5467254957812901981, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: -5179483145760003458, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: -5
     y: 762
     width: 1542
     height: 245
+=======
+    x: 0
+    y: 740
+    width: 1371.6666
+    height: 237.66669
+>>>>>>> Emile-Branch
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -804,12 +920,17 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
+<<<<<<< HEAD
     - Assets
+=======
+    - Assets/Scenes
+>>>>>>> Emile-Branch
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
+<<<<<<< HEAD
   - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\danny\OneDrive\Documents\GitHub\Resume-In-15\Resume
@@ -821,6 +942,18 @@ MonoBehaviour:
     m_SelectedIDs: a66f0000
     m_LastClickedID: 28582
     m_ExpandedIDs: 00000000a66f0000b86f000000ca9a3b
+=======
+  - Assets/Scenes
+  m_LastFoldersGridSize: -1
+  m_LastProjectPath: C:\Users\emile\Resume-In-15\Resume In 15
+  m_LockTracker:
+    m_IsLocked: 0
+  m_FolderTreeState:
+    scrollPos: {x: 0, y: 170.33331}
+    m_SelectedIDs: e46c0000
+    m_LastClickedID: 27876
+    m_ExpandedIDs: 00000000c06c0000c26c0000168f000060c60000eada010030cb030000ca9a3b
+>>>>>>> Emile-Branch
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -848,7 +981,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000a66f0000
+=======
+    m_ExpandedIDs: 00000000c06c0000c26c0000c46c0000
+>>>>>>> Emile-Branch
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -920,14 +1057,20 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Console
-    m_Image: {fileID: -4327648978806127646, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: -4950941429401207979, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 755
     width: 1543
     height: 244
+=======
+    y: 740
+    width: 1371.6666
+    height: 237.66669
+>>>>>>> Emile-Branch
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -948,7 +1091,7 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Animation
-    m_Image: {fileID: -8166618308981325432, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: -3237396543322336831, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
@@ -962,7 +1105,11 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
+<<<<<<< HEAD
   m_LastSelectedObjectID: -92182
+=======
+  m_LastSelectedObjectID: 25166
+>>>>>>> Emile-Branch
 --- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -979,14 +1126,21 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Inspector
-    m_Image: {fileID: -2667387946076563598, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: -440750813802333266, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1538
     y: 81
     width: 376
     height: 926
+=======
+    x: 1372.6667
+    y: 72.66667
+    width: 333
+    height: 905
+>>>>>>> Emile-Branch
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -1020,14 +1174,21 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Occlusion
-    m_Image: {fileID: -3571815596324412722, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: -6304520642066340446, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1544
     y: 73
     width: 375
     height: 926
+=======
+    x: 1372.6667
+    y: 72.66667
+    width: 333
+    height: 905
+>>>>>>> Emile-Branch
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -1048,14 +1209,21 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Game
-    m_Image: {fileID: -6423792434712278376, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: 4621777727084837110, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 380
     y: 81
     width: 1156
     height: 660
+=======
+    x: 343.33334
+    y: 72.66667
+    width: 1027.3333
+    height: 646.3333
+>>>>>>> Emile-Branch
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -1083,10 +1251,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -960
-    m_HBaseRangeMax: 960
-    m_VBaseRangeMin: -540
-    m_VBaseRangeMax: 540
+    m_HBaseRangeMin: -640
+    m_HBaseRangeMax: 640
+    m_VBaseRangeMin: -360
+    m_VBaseRangeMax: 360
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -1104,16 +1272,24 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
+<<<<<<< HEAD
       width: 1156
       height: 639
     m_Scale: {x: 0.59166664, y: 0.59166664}
     m_Translation: {x: 578, y: 319.5}
+=======
+      width: 1027.3333
+      height: 625.3333
+    m_Scale: {x: 0.8026041, y: 0.8026041}
+    m_Translation: {x: 513.6666, y: 312.66666}
+>>>>>>> Emile-Branch
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
+<<<<<<< HEAD
       x: -976.9014
       y: -540
       width: 1953.8029
@@ -1121,6 +1297,15 @@ MonoBehaviour:
     m_MinimalGUI: 1
   m_defaultScale: 0.59166664
   m_LastWindowPixelSize: {x: 1156, y: 660}
+=======
+      x: -640
+      y: -389.56525
+      width: 1280
+      height: 779.1305
+    m_MinimalGUI: 1
+  m_defaultScale: 0.8026041
+  m_LastWindowPixelSize: {x: 1540.9999, y: 969.5}
+>>>>>>> Emile-Branch
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000

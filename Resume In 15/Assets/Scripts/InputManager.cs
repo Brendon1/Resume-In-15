@@ -27,6 +27,7 @@ public class InputManager : MonoBehaviour
         _camera = GetComponent<PlayerCamera>();
         _ui = GetComponent<PlayerUI>();
 
+        _camera.CursorLockState(true);
         EnableMovement();
     }
 
@@ -36,10 +37,13 @@ public class InputManager : MonoBehaviour
         if (canMove)
             movement.Movement(onGroundActions.Movement.ReadValue<Vector2>());
 
+        _ui.AllFilesObtained();
+
         //Do this to ensure that the player finishes all tasks and then transition to next level
-        if (_ui.allTasksComplete())
+        if (_ui.FinishedLastTask())
         {
             transitioner.FadeToNextLevel();
+            _camera.CursorLockState(false);
             DisableMovement();
         }
     }
