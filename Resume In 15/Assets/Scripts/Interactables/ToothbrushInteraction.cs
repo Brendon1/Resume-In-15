@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class ToothbrushInteraction : Interactable
 {
-    [SerializeField]
     private AudioSource _audio;
+
     [SerializeField]
     private InputManager _input;
 
-    //LateUpdate happens during Interaction
-    private void LateUpdate()
+    private Vector3 currentPos;
+
+    private void Awake()
     {
-        if(!_audio.isPlaying)
-            _input.EnableMovement();
+        _audio = GetComponent<AudioSource>();
+        currentPos = transform.position;
     }
 
     /// <summary>
@@ -22,7 +23,17 @@ public class ToothbrushInteraction : Interactable
     protected override void Interact()
     {
         _audio.Play();
-        _input.DisableMovement();
+        gameObject.transform.position = new Vector3(gameObject.transform.position.x + 20, gameObject.transform.position.y, gameObject.transform.position.z); //hide the toothbrush
+
+        StartCoroutine(WaitForAudio());
         gameObject.layer = 0;
+    }
+
+    IEnumerator WaitForAudio()
+    {
+        _input.DisableMovement();
+        yield return new WaitForSeconds(_audio.clip.length);
+        gameObject.transform.position = currentPos; //show it again
+        _input.EnableMovement();
     }
 }

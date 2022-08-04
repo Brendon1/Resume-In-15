@@ -28,13 +28,10 @@ public class PlayerInteraction : MonoBehaviour
     void Update()
     {
         //Ensure it stays empty when not colliding
-        playerUI.UpdateText(string.Empty);
+        playerUI.UpdateTextAndCrosshair(string.Empty);
 
         //Raycast
         CreateRaycast(distance);
-
-        //Interaction
-        //PlayerInteract(hit);
     }
 
     private void CreateRaycast(float length)
@@ -50,25 +47,15 @@ public class PlayerInteraction : MonoBehaviour
                 Interactable interactable = hit.collider.GetComponent<Interactable>();
 
                 //Update the text on screen
-                playerUI.UpdateText(hit.collider.GetComponent<Interactable>().prompt);
-                
-                //check for interact press
-                if(inputManager.onGroundActions.Interact.triggered)
+                playerUI.UpdateTextAndCrosshair(interactable.prompt);
+
+                //Check for interact press
+                if (inputManager.onGroundActions.Interact.triggered)
                 {
                     interactable.BaseInteract(); //this will run the "Interact" function in the overrwritten interactable object
                     interactable.BaseCompleteTask(); //Complete the task associated with interactable
                 }
             }
         }
-
-        //return hit;
     }
-
-    //private void PlayerInteract(RaycastHit hit)
-    //{
-    //    if (hit.collider.GetComponent<Interactable>() != null)
-    //    {
-    //        Debug.Log(hit.collider.GetComponent<Interactable>().prompt);
-    //    }
-    //}
 }

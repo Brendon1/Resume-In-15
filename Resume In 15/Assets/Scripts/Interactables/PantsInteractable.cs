@@ -13,7 +13,7 @@ public class PantsInteractable : Interactable
     protected override void Interact()
     {
         _audio.Play();
-        //it wont play audio rn ill fix later
-        Object.Destroy(gameObject);
+        gameObject.layer = 0;
+        gameObject.transform.localPosition = new Vector3(300, 0, 0);
     }
 }
