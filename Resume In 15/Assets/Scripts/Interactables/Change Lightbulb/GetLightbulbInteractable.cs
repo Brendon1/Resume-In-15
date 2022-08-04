@@ -12,7 +12,7 @@ public class GetLightbulbInteractable : Interactable
     /// </summary>
     protected override void Interact()
     {
-        bulbContainer.layer = 6;
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        gameObject.layer = 0;
     }
 }

@@ -19,12 +19,14 @@ public class SpawnAdInWorld : MonoBehaviour
     private void Awake()
     {
         _audio = GetComponent<AudioSource>();
+        _audio.pitch = 0.75f;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Triggered!");
         _audio.Play();
+        _audio.pitch += 0.25f;
         spawnedAd = SpawnAd();
     }
 
