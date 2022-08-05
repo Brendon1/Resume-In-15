@@ -33,6 +33,9 @@ public class TitleScreenTransitioner : MonoBehaviour
 
     void Start()
     {
+        //Ensure mouse cursor is there at all times
+        Cursor.lockState = CursorLockMode.None;
+
         //Setup title screen immediately
         titleName.text = "Resume In " + time;
 
@@ -40,7 +43,7 @@ public class TitleScreenTransitioner : MonoBehaviour
         optionalList = new List<Object>(Resources.LoadAll("OptionalVideos"));
         //adList = new List<Object>(Resources.LoadAll("AdVideos"));
 
-        //Screen.SetResolution(1920, 1080, true);
+        Screen.SetResolution(1920, 1080, true);
     }
 
     #region Animation Functions

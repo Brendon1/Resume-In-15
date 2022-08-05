@@ -12,7 +12,7 @@ public class PlayerCamera : MonoBehaviour
     private float x_Rotation = 0f;
 
     //Controls how fast camera will move per frame
-    public float mouseSensitivity = 55f;
+    public float mouseSensitivity = 50f;
 
     //Extra Camera Properties
     public float fov = 60f;
@@ -82,5 +82,14 @@ public class PlayerCamera : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
         else
             Cursor.lockState = CursorLockMode.None;
+    }
+
+    /// <summary>
+    /// Changes the mouse sensitivity (particularly used for the pause menu slider)
+    /// </summary>
+    /// <param name="value"></param>
+    public void ChangeMouseSensitvity(float value)
+    {
+        mouseSensitivity = value;
     }
 }
