@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class PantsInteractable : Interactable
 {
-    [SerializeField]
     private AudioSource _audio;
+
+    void Awake()
+    {
+        _audio = GetComponent<AudioSource>();
+    }
 
     /// <summary>
     /// Interact with pants
