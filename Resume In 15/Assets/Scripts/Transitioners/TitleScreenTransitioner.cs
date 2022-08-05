@@ -33,6 +33,9 @@ public class TitleScreenTransitioner : MonoBehaviour
 
     void Start()
     {
+        //Ensure mouse cursor is there at all times
+        Cursor.lockState = CursorLockMode.None;
+
         //Setup title screen immediately
         titleName.text = "Resume In " + time;
 

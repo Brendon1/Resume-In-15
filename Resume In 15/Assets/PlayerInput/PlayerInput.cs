@@ -213,6 +213,45 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
             ]
         },
         {
+            ""name"": ""Menu"",
+            ""id"": ""2ee3cd5c-1de1-4981-8da0-2cb929212512"",
+            ""actions"": [
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""b7f6f152-84a4-4d35-873b-2e86c9ea6b1d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""99fe3f63-056e-425b-9106-debfa977f8cd"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e721d9b5-89b7-422c-923d-a691f78bd182"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
             ""name"": ""UI"",
             ""id"": ""07a0e023-7b23-480d-b640-935ad1929c4b"",
             ""actions"": [
@@ -736,6 +775,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         m_OnGround_Movement = m_OnGround.FindAction("Movement", throwIfNotFound: true);
         m_OnGround_Interact = m_OnGround.FindAction("Interact", throwIfNotFound: true);
         m_OnGround_CameraLook = m_OnGround.FindAction("CameraLook", throwIfNotFound: true);
+        // Menu
+        m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
+        m_Menu_Pause = m_Menu.FindAction("Pause", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -853,6 +895,39 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     }
     public OnGroundActions @OnGround => new OnGroundActions(this);
 
+    // Menu
+    private readonly InputActionMap m_Menu;
+    private IMenuActions m_MenuActionsCallbackInterface;
+    private readonly InputAction m_Menu_Pause;
+    public struct MenuActions
+    {
+        private @PlayerInput m_Wrapper;
+        public MenuActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Pause => m_Wrapper.m_Menu_Pause;
+        public InputActionMap Get() { return m_Wrapper.m_Menu; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(MenuActions set) { return set.Get(); }
+        public void SetCallbacks(IMenuActions instance)
+        {
+            if (m_Wrapper.m_MenuActionsCallbackInterface != null)
+            {
+                @Pause.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnPause;
+                @Pause.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnPause;
+                @Pause.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnPause;
+            }
+            m_Wrapper.m_MenuActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
+            }
+        }
+    }
+    public MenuActions @Menu => new MenuActions(this);
+
     // UI
     private readonly InputActionMap m_UI;
     private IUIActions m_UIActionsCallbackInterface;
@@ -962,6 +1037,10 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnCameraLook(InputAction.CallbackContext context);
+    }
+    public interface IMenuActions
+    {
+        void OnPause(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
