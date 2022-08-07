@@ -5,10 +5,12 @@ using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
+    //Player Input (Input System)
     private PlayerInput playerInput;
     public PlayerInput.OnGroundActions onGroundActions;
     public PlayerInput.MenuActions menuActions;
 
+    //Scripts attached to player
     private PlayerMovement movement;
     private PlayerCamera _camera;
     private PlayerUI _ui;
@@ -41,6 +43,9 @@ public class InputManager : MonoBehaviour
         EnableMovement();
     }
 
+    /// <summary>
+    /// Manages Player Movement and Menu Actions
+    /// </summary>
     void Update()
     {
         //Check if player pressed pause
@@ -73,6 +78,9 @@ public class InputManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Manages Camera Control
+    /// </summary>
     private void LateUpdate()
     {
         //Check Camera Control perframe after movement frames have been registered (Avoids camera stuttering
